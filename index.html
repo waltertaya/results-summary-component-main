@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link href="styles.css" rel="stylesheet">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Results summary component</title>
+</head>
+<body>
+  <div class="result-container">
+    <div class="result">
+      <div class="result1">
+        <h1 class="head">Your result</h1>
+        <section class="circle">
+          <p><span style="font-family: 'Hanken Grotesk', sans-serif;">76</span></p>
+          <p class="number">of 100</p>
+        </section>
+        <section>
+          <h1>Great</h1>
+          <p><span class="pad" style="font-size: 10px;">You scored higher than 65% of <br> the people who have taken <br> these tests.</span></p>
+        </section>
+      </div>
+    </div>
+    <div class="result">
+      <div class="result2">
+        <h1>Summary</h1>
+        <section class="data-item" id="reaction">
+          <p class="category"><img src="" alt="" class="data-icon">
+          <span style="color: hsl(0, 100%, 67%)" class="data-category"></span></p>
+          <p class="score"><span class="data-score"></span> / 100</p>
+        </section>
+        <section class="data-item" id="memory">
+          <p class="category"><img src="" alt="" class="data-icon">
+          <span class="data-category" style="color: hsl(39, 100%, 56%);"></span></p>
+          <p class="score"><span class="data-score"></span> / 100</p>
+        </section>
+        <section class="data-item" id="verbal">
+          <p class="category"><img src="" alt="" class="data-icon">
+          <span class="data-category" style="color: hsl(166, 100%, 37%);"></span></p>
+          <p class="score1"><span class="data-score"></span> / 100</p>
+        </section>
+        <section class="data-item" id="visual">
+          <p class="category"><img src="" alt="" class="data-icon">
+          <span class="data-category" style="color:hsl(234, 85%, 45%);"></span></p>
+          <p class="score1"><span class="data-score"></span> / 100</p>
+        </section>
+        <section>
+          <label><input type="submit" value="Continue" class="button"/></label>
+        </section>
+      </div>
+    </div>
+  </div>
+  <script>
+    var jsonData = [
+      {
+        "category": "Reaction",
+        "score": 80,
+        "icon": "./assets/images/icon-reaction.svg"
+      },
+      {
+        "category": "Memory",
+        "score": 92,
+        "icon": "./assets/images/icon-memory.svg"
+      },
+      {
+        "category": "Verbal",
+        "score": 61,
+        "icon": "./assets/images/icon-verbal.svg"
+      },
+      {
+        "category": "Visual",
+        "score": 72,
+        "icon": "./assets/images/icon-visual.svg"
+      }
+    ];
+
+    function displayData() {
+      var dataItems = document.querySelectorAll(".data-item");
+
+      jsonData.forEach(function (item, index) {
+        var dataItem = dataItems[index];
+        dataItem.querySelector(".data-icon").src = item.icon;
+        dataItem.querySelector(".data-icon").alt = item.category;
+        dataItem.querySelector(".data-category").textContent = item.category;
+        dataItem.querySelector(".data-score").textContent = item.score;
+      });
+    }
+
+    // Call the displayData function to populate data
+    displayData();
+  </script>
+</body>
+</html>
