@@ -112,6 +112,12 @@ h1 {
 }
 
 @media screen and (min-width: 570px) {
+    body {
+        background-color: hsl(0, 0%, 100%);
+        font-size: 10px;
+        font-family: 'Hanken Grotesk', sans-serif;
+        margin-top: 13rem;
+    }
     .result {
         width: 50%;
         float: left;
@@ -210,11 +216,11 @@ h1 {
     .seven {
         position: absolute;
         padding-left: 1.5rem;
-        top: 9rem;
+        top: 16.6rem;
     }
     .number {
         position: absolute;
-        top: 14.8rem;
+        top: 22.5rem;
         padding-left: 2.1rem;
     }
     .pad {
